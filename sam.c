@@ -124,6 +124,7 @@ static bool cmd_map(Vis*, Win*, Command*, const char *argv[], Cursor*, Filerange
 static bool cmd_unmap(Vis*, Win*, Command*, const char *argv[], Cursor*, Filerange*);
 static bool cmd_langmap(Vis*, Win*, Command*, const char *argv[], Cursor*, Filerange*);
 static bool cmd_user(Vis*, Win*, Command*, const char *argv[], Cursor*, Filerange*);
+static bool cmd_dump(Vis*, Win*, Command*, const char *argv[], Cursor*, Filerange*);
 
 static const CommandDef cmds[] = {
 	//      name            help
@@ -250,6 +251,9 @@ static const CommandDef cmds[] = {
 	}, {
 		"later",        "Go to newer text state",
 		CMD_ARGV|CMD_ONCE|CMD_ADDRESS_NONE, NULL, cmd_earlier_later
+	}, {
+		"dump",         "Dump piece table as graphiz data",
+		CMD_ARGV|CMD_ONCE, NULL, cmd_dump
 	},
 	{ NULL, NULL, CMD_NONE, NULL, NULL },
 };
